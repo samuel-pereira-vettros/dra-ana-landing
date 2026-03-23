@@ -1,25 +1,321 @@
 import { Button } from "@/components/ui/button";
-import { Loader2 } from "lucide-react";
-import { Streamdown } from 'streamdown';
+import { Mail, Phone, Instagram, Heart, Users, BookOpen, ArrowRight } from "lucide-react";
 
 /**
- * All content in this page are only for example, replace with your own feature implementation
- * When building pages, remember your instructions in Frontend Best Practices, Design Guide and Common Pitfalls
+ * Design Philosophy: Healthcare Professional
+ * - Calming teal/turquoise palette for trust and healthcare
+ * - Elegant typography with Playfair Display for headings
+ * - Clean, spacious layout with strategic whitespace
+ * - Subtle shadows and soft gradients for depth
+ * - Professional yet warm and welcoming tone
  */
-export default function Home() {
-  // If theme is switchable in App.tsx, we can implement theme toggling like this:
-  // const { theme, toggleTheme } = useTheme();
 
+const whatsappLink = "https://wa.me/55?text=Olá,%20Dra.%20Ana.%20Gostaria%20de%20saber%20mais%20sobre%20as%20consultas.";
+const instagramMaternally = "https://www.instagram.com/maternamente8";
+const instagramDraAna = "https://www.instagram.com/draana.aps";
+
+export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col">
-      <main>
-        {/* Example: lucide-react for icons */}
-        <Loader2 className="animate-spin" />
-        Example Page
-        {/* Example: Streamdown for markdown rendering */}
-        <Streamdown>Any **markdown** content</Streamdown>
-        <Button variant="default">Example Button</Button>
-      </main>
+    <div className="min-h-screen bg-background text-foreground">
+      {/* Navigation */}
+      <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-border">
+        <div className="container flex items-center justify-between py-4">
+          <div className="flex items-center gap-2">
+            <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
+              <Heart className="w-5 h-5 text-primary-foreground" />
+            </div>
+            <span className="font-display font-bold text-lg text-foreground">Dra. Ana</span>
+          </div>
+          <div className="flex items-center gap-4">
+            <a href={instagramMaternally} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+              <Instagram className="w-5 h-5" />
+            </a>
+            <a href={instagramDraAna} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+              <Instagram className="w-5 h-5" />
+            </a>
+          </div>
+        </div>
+      </nav>
+
+      {/* Hero Section */}
+      <section className="relative overflow-hidden py-16 md:py-24">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5" />
+        <div className="container relative z-10">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            {/* Text Content */}
+            <div className="space-y-6">
+              <div className="inline-block px-4 py-2 bg-accent/10 rounded-full">
+                <span className="text-sm font-medium text-primary">Medicina de Família e Comunidade</span>
+              </div>
+              <h1 className="font-display font-bold text-4xl md:text-5xl leading-tight text-foreground">
+                Acolhimento e cuidado integral para você e sua família
+              </h1>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Especialista em saúde mental perinatal, consultas online humanizadas e mentoria para médicos do PSF. Aqui você encontra cuidado profissional com escuta atenta.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground gap-2">
+                  <Phone className="w-4 h-4" />
+                  Agendar Consulta
+                </Button>
+                <Button size="lg" variant="outline" className="gap-2">
+                  <Mail className="w-4 h-4" />
+                  Saiba Mais
+                </Button>
+              </div>
+              <div className="pt-4 space-y-2 text-sm text-muted-foreground">
+                <p>CRM: 207664 | RQE: 102123</p>
+                <p>Médica de Família e Comunidade</p>
+              </div>
+            </div>
+
+            {/* Image */}
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl blur-3xl" />
+              <img
+                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663107118368/EjitbCewVGpk378kgTBwvX/dra-ana-carolina_f930ff4e.webp"
+                alt="Dra. Ana Carolina Siqueira"
+                className="relative rounded-2xl shadow-2xl w-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section className="py-16 md:py-24 bg-secondary/30">
+        <div className="container">
+          <div className="text-center mb-16">
+            <h2 className="font-display font-bold text-3xl md:text-4xl mb-4 text-foreground">
+              Minhas Áreas de Atuação
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Oferecendo cuidado especializado em diferentes aspectos da saúde
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Service 1 */}
+            <div className="bg-white rounded-xl p-8 shadow-sm hover:shadow-lg transition-shadow border border-border">
+              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                <Heart className="w-6 h-6 text-primary" />
+              </div>
+              <h3 className="font-display font-bold text-xl mb-3 text-foreground">
+                Saúde Mental Perinatal
+              </h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Cuidado especializado com saúde mental antes, durante e depois da gestação. Acolhimento para depressão pós-parto, ansiedade e adaptação à maternidade.
+              </p>
+            </div>
+
+            {/* Service 2 */}
+            <div className="bg-white rounded-xl p-8 shadow-sm hover:shadow-lg transition-shadow border border-border">
+              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                <Users className="w-6 h-6 text-primary" />
+              </div>
+              <h3 className="font-display font-bold text-xl mb-3 text-foreground">
+                Consultas Online
+              </h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Atendimento médico prático e acessível para todo o Brasil. Consultas humanizadas com escuta atenta às suas necessidades de saúde.
+              </p>
+            </div>
+
+            {/* Service 3 */}
+            <div className="bg-white rounded-xl p-8 shadow-sm hover:shadow-lg transition-shadow border border-border">
+              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                <BookOpen className="w-6 h-6 text-primary" />
+              </div>
+              <h3 className="font-display font-bold text-xl mb-3 text-foreground">
+                Mentoria para Médicos
+              </h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Orientação e suporte para médicos do PSF. Discussão de casos, desenvolvimento profissional e bem-estar na prática médica.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section className="py-16 md:py-24">
+        <div className="container">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="space-y-6">
+              <h2 className="font-display font-bold text-3xl md:text-4xl text-foreground">
+                Sobre Mim
+              </h2>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Sou Médica de Família e Comunidade com especialização em saúde mental perinatal. Minha trajetória profissional é marcada pela paixão em cuidar de pessoas em todas as fases da vida, com especial atenção ao período gestacional e puerperal.
+              </p>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Trabalho com uma abordagem humanizada, acreditando que o cuidado integral passa pela escuta atenta, compreensão das necessidades individuais e acolhimento genuíno. Além de atender pacientes, também mentoro colegas médicos que atuam no PSF.
+              </p>
+              <div className="pt-4 space-y-3">
+                <div className="flex items-center gap-3">
+                  <div className="w-2 h-2 bg-primary rounded-full" />
+                  <span className="text-foreground">Formação em Medicina de Família e Comunidade</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-2 h-2 bg-primary rounded-full" />
+                  <span className="text-foreground">Especialista em Saúde Mental Perinatal</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-2 h-2 bg-primary rounded-full" />
+                  <span className="text-foreground">Mentora de Médicos do PSF</span>
+                </div>
+              </div>
+            </div>
+            <div className="bg-gradient-to-br from-primary/10 to-accent/10 rounded-xl p-8 border border-primary/20">
+              <div className="space-y-6">
+                <div className="text-center">
+                  <div className="text-4xl font-display font-bold text-primary mb-2">100%</div>
+                  <p className="text-muted-foreground">Foco em Cuidado Humanizado</p>
+                </div>
+                <div className="h-px bg-border" />
+                <div className="text-center">
+                  <div className="text-4xl font-display font-bold text-primary mb-2">Online</div>
+                  <p className="text-muted-foreground">Consultas Acessíveis</p>
+                </div>
+                <div className="h-px bg-border" />
+                <div className="text-center">
+                  <div className="text-4xl font-display font-bold text-primary mb-2">24/7</div>
+                  <p className="text-muted-foreground">Suporte e Orientação</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Social Media Section */}
+      <section className="py-16 md:py-24 bg-secondary/30">
+        <div className="container">
+          <div className="text-center mb-12">
+            <h2 className="font-display font-bold text-3xl md:text-4xl mb-4 text-foreground">
+              Acompanhe nas Redes Sociais
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              Conteúdo sobre saúde mental, maternidade e bem-estar profissional
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Instagram 1 */}
+            <a
+              href={instagramMaternally}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group bg-white rounded-xl p-8 shadow-sm hover:shadow-lg transition-all border border-border hover:border-primary"
+            >
+              <div className="flex items-center justify-between mb-4">
+                <div>
+                  <h3 className="font-display font-bold text-xl text-foreground">@maternamente8</h3>
+                  <p className="text-sm text-muted-foreground">Saúde Mental e Maternidade</p>
+                </div>
+                <Instagram className="w-6 h-6 text-primary group-hover:scale-110 transition-transform" />
+              </div>
+              <p className="text-muted-foreground mb-4">
+                Conteúdo especializado sobre saúde mental perinatal, dicas de bem-estar e acolhimento para mães.
+              </p>
+              <div className="flex items-center gap-2 text-primary font-medium">
+                Seguir <ArrowRight className="w-4 h-4" />
+              </div>
+            </a>
+
+            {/* Instagram 2 */}
+            <a
+              href={instagramDraAna}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group bg-white rounded-xl p-8 shadow-sm hover:shadow-lg transition-all border border-border hover:border-primary"
+            >
+              <div className="flex items-center justify-between mb-4">
+                <div>
+                  <h3 className="font-display font-bold text-xl text-foreground">@draana.aps</h3>
+                  <p className="text-sm text-muted-foreground">Mentoria e Vida Pessoal</p>
+                </div>
+                <Instagram className="w-6 h-6 text-primary group-hover:scale-110 transition-transform" />
+              </div>
+              <p className="text-muted-foreground mb-4">
+                Mentoria para médicos, reflexões sobre carreira e bem-estar profissional na medicina.
+              </p>
+              <div className="flex items-center gap-2 text-primary font-medium">
+                Seguir <ArrowRight className="w-4 h-4" />
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-16 md:py-24 bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10">
+        <div className="container text-center">
+          <h2 className="font-display font-bold text-3xl md:text-4xl mb-6 text-foreground">
+            Pronto para cuidar da sua saúde?
+          </h2>
+          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+            Entre em contato para agendar sua consulta online ou tirar dúvidas sobre mentoria. Estou aqui para ajudar.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground gap-2">
+              <Phone className="w-4 h-4" />
+              Agendar via WhatsApp
+            </Button>
+            <Button size="lg" variant="outline" className="gap-2">
+              <Mail className="w-4 h-4" />
+              Enviar Email
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-foreground/5 border-t border-border py-12">
+        <div className="container">
+          <div className="grid md:grid-cols-4 gap-8 mb-8">
+            <div>
+              <div className="flex items-center gap-2 mb-4">
+                <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
+                  <Heart className="w-4 h-4 text-primary-foreground" />
+                </div>
+                <span className="font-display font-bold text-foreground">Dra. Ana</span>
+              </div>
+              <p className="text-sm text-muted-foreground">
+                Medicina de Família e Comunidade com foco em saúde mental perinatal.
+              </p>
+            </div>
+            <div>
+              <h4 className="font-semibold text-foreground mb-4">Serviços</h4>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li><a href="#" className="hover:text-primary transition-colors">Saúde Mental Perinatal</a></li>
+                <li><a href="#" className="hover:text-primary transition-colors">Consultas Online</a></li>
+                <li><a href="#" className="hover:text-primary transition-colors">Mentoria</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold text-foreground mb-4">Redes Sociais</h4>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li><a href={instagramMaternally} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">@maternamente8</a></li>
+                <li><a href={instagramDraAna} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">@draana.aps</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold text-foreground mb-4">Informações</h4>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li>CRM: 207664</li>
+                <li>RQE: 102123</li>
+                <li>Médica de Família e Comunidade</li>
+              </ul>
+            </div>
+          </div>
+          <div className="border-t border-border pt-8">
+            <p className="text-center text-sm text-muted-foreground">
+              © 2026 Dra. Ana Carolina Siqueira. Todos os direitos reservados.
+            </p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
